@@ -1,0 +1,40 @@
+header, main, footer {
+    padding-left: 240px;
+}
+
+main {
+    margin-top: 2%;
+}
+
+body {
+    background-color: #efeeed !important;
+}
+
+nav {
+    background-color: #355c7d !important;
+    padding-right: 10px;
+}
+#nav-menu-icon {
+    padding-left: 10px;
+}
+
+/** Materialize Overrides
+*/
+.container {
+    padding-top: 15px;
+}
+
+#vinyl-breadcrumb {
+    margin: 2.1rem 0 1.68rem 0
+}
+
+#icon-align {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}

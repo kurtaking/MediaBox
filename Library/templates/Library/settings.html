@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h4 style="padding-left: 15px">Settings</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white">
+
+                <div class="row">
+                    <div class="col s12 l6">
+                       {% for user in users %}
+                        <p>Username: {{ user.username }}</p>
+                        <p>First Name: {{ user.first_name }}</p>
+                        <p>Last Name: {{ user.last_name }}</p>
+                        <p>Email: {{ user.email }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col s12 l6"
+                        <p>1. Maybe display accout information</p>
+                        <p>2. Change username, profile information</p>
+                        <p>3. Delete an entire library</p>
+                        <p>4. anything else?</p>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

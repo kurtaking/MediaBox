@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block inside %}
+
+<div class="container">
+    <div class="row">
+        <h2 class="center-align">Dashboard</h2>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>Libraries</h5>
+
+                        <ul>
+                            <li><a href="{% url 'vinyls' %}"><i class="material-icons circle">library_music</i>Vinyls</a></li>
+                            <li><a href="{% url 'movies' %}"><i class="material-icons circle">movie</i>Movies</a></li>
+                            <li><a href="{% url 'video_games' %}"><i class="material-icons circle">videogame_asset</i>Video Games</a></li>
+                            <li><a href="{% url 'books' %}"><i class="material-icons circle">library_books</i>Books</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card-panel white">
+                        <div class="row">
+                            <div class="col s12">
+                                <p>chart goes here<br>maybe a bar graph or doughnut graph that display how many entries are in each library.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card-panel white">
+                        <div class="row">
+                            <div class="col s12">
+                                <p>Features</p>
+                                <ul>
+                                    <li>Search functionality through media</li>
+                                    <li>Top favorites of each</li>
+                                    <li>Statistics (total amount of each media owned, etc)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12">
+                        <h4>Statistics</h4>
+                        <p>Come up with overall stats (look into bar graph api)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

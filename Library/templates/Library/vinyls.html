@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12 l4">
+                        <h1>Vinyls</h1>
+                    </div>
+                    <div class="col s12 l8">
+                        <nav>
+                            <div class="nav-wrapper" id="vinyl-breadcrumb">
+                                <div class="col s8">
+                                    <a href="{% url 'vinyls' %}" class="breadcrumb" id="all_vinyls">All Vinyls</a>
+                                    <a href="{% url 'by_artist' %}" class="breadcrumb" id="by_artist">By Artist</a>
+                                </div>
+                                <div class="col s4">
+                                    <a class="waves-effect waves-light btn modal-trigger align-right" href="#add-vinyl">Add Vinyl</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Modal for adding a new vinyl -->
+                <div id="add-vinyl" class="modal">
+                    <div class="modal-content">
+                        <div class="container">
+                            <h4>Add Vinyl</h4>
+
+                              <div class="row">
+                                <form class="col s12" method="post" action="/vinyls/" name="form" id="add-vinyl-form">
+                                    {% csrf_token %}
+
+                                    {% for field in form %}
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="{{ field.id_for_label }}" type="text" class="validate" name="{{ field.name }}">
+                                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                    <button href="{% url 'vinyls' %}" class="waves-effect waves-light btn align-right" id="add-vinyl type="submit">Add Vinyl</button>
+                                </form>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+
+
+                <!--Table of User's Vinyls -->
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th data-field="artist">Artist</th>
+                            <th data-field="title">Title</th>
+                            <th data-field="year">Year</th>
+                            <th data-field="year">Genre</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Loop through the list of vinyls for each user and create the table body -->
+                    <tbody>
+                        {% for vinyl in vinyls %}
+                            <tr>
+                                <td><a href="{% url 'vinyl_detail' vinyl.id %}">{{ vinyl.artist }}</a></td>
+                                <td>{{ vinyl.title }}</td>
+                                <td>{{ vinyl.year }}</td>
+                                <td>{{ vinyl.genre }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12">
+                        <h4>Vinyl Statistics</h4>
+                        <p>Total Number of vinyls:</p>
+                        <p>Highest number of vinyls per artist</p>
+                        <p>etc, try to think of some cool statistics</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

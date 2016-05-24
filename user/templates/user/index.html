@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 l6">
+            <br><br><br><br>
+            <h4 class="center-align">MediaBox</h4>
+            <p class="center-align"><em>a central multimedia storage system</em></p>
+            <br>
+            <p>Welcome to the Media Management System. Our goal is to provide you a central system to store all your favorite media collectables. Whether
+            it's vinyls, movies, video games, or books, we will keep track of your collection!</p>
+            <br><br>
+            <p>During development, if you are redirect to this page, that view has not been created yet.</p>
+        </div>
+
+        <div class="col s12 l6">
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <form class="col s12" id="login-form" name="login-form" method="post" action="{% url 'user_dashboard' %}">
+                                {% csrf_token %}
+
+                                <div class="row">
+                                    <div class="col s12">
+                                        <h4 class="center-align"><i class="fa fa-user"></i>Register:</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 center-align">
+                                        <a class="btn-floating btn-large waves-effect waves-light blue"><i class="fa fa-facebook"></i></a>
+                                        <a class="btn-floating btn-large waves-effect waves-light blue"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <h4 class="center-align">Login:</h4>
+                                    </div>
+                                </div>
+
+
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Username</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">vpn_key</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Password</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 center-align">
+                                        <br>
+                                        <a href="{% url 'user_dashboard' %}" class="waves-effect waves-light btn" type="submit">Login</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1458400411386-5ae465c4e57e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=47756f965e991bf72aa756b410929b04">
+                    <span class="card-title black-text">Libraries</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1458400411386-5ae465c4e57e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=47756f965e991bf72aa756b410929b04">
+                    <span class="card-title black-text">Statistics</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1458400411386-5ae465c4e57e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=47756f965e991bf72aa756b410929b04">
+                    <span class="card-title black-text">Personalization</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

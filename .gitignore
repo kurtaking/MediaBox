@@ -1,0 +1,15 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Django
+.Python
+bin
+lib
+include
+__pycache__
+
+# Mac
+.DS_Store
